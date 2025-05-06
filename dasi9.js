@@ -9,7 +9,7 @@
     }
     if (d == 0) {
       var x = -b / 2 * a;
-      result.textContent = a + "x^2 +" "(" + b + ")" + "x" + "+" + "(" + c + ")" + ";" + "D=" + d + " ;" + "x=" + x;
+      result.textContent = a + "x^2 +" + "(" + b + ")" + "x" + "+" + "(" + c + ")" + ";" + "D=" + d + " ;" + "x=" + x;
     }
     if (d > 0) {
       var x1 = (-1 * b + Math.sqrt(d)) / 2 * a;
