@@ -2,16 +2,17 @@ var formula = prompt("Գրիր հավասարման տեսակը (գծային �
 var result = document.getElementById("result");
 
 if (formula === "գծային") {
-  var a = parseFloat(prompt("Գրիր a (ax = b)"));
-  var b = parseFloat(prompt("Գրիր b (" + a + "x = b)"));
+  var k = parseFloat(prompt("Գրիր k (kx + b = y)"));
+  var b = parseFloat(prompt("Գրիր b (" + k + "x + b = y)"));
+  var y = parseFloat(prompt("Գրիր y (" + k + "x + " + b + " = y)"));
 
-  if (isNaN(a) || isNaN(b)) {
+  if (isNaN(k) || isNaN(b) || isNaN(y)) {
     result.innerHTML = "Սխալ մուտքագրում։ Մուտքագրիր թվեր։";
-  } else if (a === 0) {
-    result.innerHTML = a + "x = " + b + "<br>Լուծում չկա (a = 0)";
+  } else if (k === 0) {
+    result.innerHTML = k + "x + " + b + " = " + y + "<br>Լուծում չկա (k = 0)";
   } else {
-    var x = b / a;
-    result.innerHTML = a + "x = " + b + "<br>x = " + x;
+    var x = (y - b) / k;
+    result.innerHTML = k + "x + " + b + " = " + y + "<br>x = " + x;
   }
 }
 
@@ -44,3 +45,4 @@ else if (formula === "քառակուսային") {
 else {
   result.innerHTML = "Սխալ մուտքագրված հավասարման տեսակ։ Մուտքագրիր 'գծային' կամ 'քառակուսային'";
 }
+
